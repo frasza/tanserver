@@ -7,6 +7,12 @@ export function todosRepository() {
     return response.data as Array<Todo>
   }
 
+  async function getSingleTodo(id: number) {
+    const response = await $http(`/api/todos/${id}`)
+
+    return response.data as Todo
+  }
+
   async function createTodo(todo: Todo) {
     const response = await $http('/api/todos', {
       method: 'POST',
@@ -18,6 +24,7 @@ export function todosRepository() {
 
   return {
     getAllTodos,
+    getSingleTodo,
     createTodo,
   }
 }

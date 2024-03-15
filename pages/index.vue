@@ -6,11 +6,19 @@ import * as z from 'zod'
 
 const { $queryClient } = useNuxtApp()
 
-const { getAllTodos, createTodo } = todosRepository()
+const { getAllTodos, getSingleTodo, createTodo } = todosRepository()
 
 const { data: todos } = useQuery({
   queryKey: ['todos'],
   queryFn: getAllTodos,
+})
+
+const isEnabled = computed(() => !!todos.value)
+
+const { data: todo } = useQuery({
+  queryKey: ['todos', length],
+  queryFn: () => getSingleTodo(1),
+  enabled: isEnabled,
 })
 
 const { mutate } = useMutation({
