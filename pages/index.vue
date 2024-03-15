@@ -32,7 +32,7 @@ const { value: title } = useField('title')
 
 const onSubmit = handleSubmit((value) =>
   mutate({
-    id: 6,
+    id: 5,
     title: value.title,
     complete: false,
   }),
@@ -50,5 +50,5 @@ const onSubmit = handleSubmit((value) =>
     <button>Add</button>
   </form>
 
-  <pre v-if="errors.title">{{ errors }}</pre>
+  <pre v-if="meta.touched && errors.title">{{ errors }}</pre>
 </template>
