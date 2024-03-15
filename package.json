@@ -1,0 +1,27 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@tanstack/vue-query": "^5.25.0",
+    "@tanstack/vue-query-devtools": "^5.25.0",
+    "@vee-validate/zod": "^4.12.6",
+    "axios": "^1.6.7",
+    "nuxt": "^3.10.3",
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@nuxt/fonts": "^0.2.1",
+    "@vee-validate/nuxt": "^4.12.6",
+    "better-sqlite3": "^9.4.3"
+  }
+}
